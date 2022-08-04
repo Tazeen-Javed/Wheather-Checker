@@ -11,24 +11,25 @@
 </head>
 <body>
   <div class="main">
-    <h1>Whether App</h1>
-    <form onsubmit="check(); return false;">
-    <label for="cityname">Enter Your Location</label></br>
-    <input type="text" id="cityname" required>
+    <h1 class="heading animate__animated animate__backInLef">Whether App</h1>
+    <form onsubmit="check(); return false;" class=" animate__animated animate__backInUp">
+   <!-- <label for="cityname">Enter Your Location</label></br> -->
+    <input type="text" id="cityname" required placeholder="Enter Your Location">
     <button type="submit">ENTER</button>
     </form>
-    <div id="result">
     
-      <p id="r1"> </p>
+    <div id="result">
+     <div class="animate__animated animate__backInLef">
+     <p id="r1">  </p>
       <p id="r2">  </p>
       <p id="r3">  </p>
       <p id="r4">  </p>
       <p id="r5">  </p>
       <p id="r6">  </p>
+      <p id="r7">  </p>
+      <p id="r8">  </p>
       
-   </div>
-
-    </div>
+   </div></div>
 
     <script>
   function check(){
@@ -36,6 +37,8 @@
     // ac513ed21a684af3ab4155130222907
     let cityname = document.querySelector("#cityname").value;
     let result = " ";
+    
+    
 
     axios.get(`https://api.weatherapi.com/v1/current.json?key=ac513ed21a684af3ab4155130222907&q=${cityname}&aqi=no`)
   .then(function (response) {
@@ -48,13 +51,14 @@
     // document.querySelector("#result").innerHTML +=`The ${response}`;
    
     
-    
-  document.querySelector("#r1").innerHTML = `Current-Temp(C): ${whetherdata.current.temp_c}`
-  document.querySelector("#r2").innerHTML = `Cloud: ${whetherdata.current.cloud}`
-  document.querySelector("#r3").innerHTML = `Location: ${whetherdata.location.name}`
-  document.querySelector("#r4").innerHTML = `Local-Time: ${whetherdata.location.localtime}`
-  document.querySelector("#r5").innerHTML = `Humidity: ${whetherdata.current.humidity}`
-  document.querySelector("#r6").innerHTML = `Wind: ${whetherdata.current.wind_mph}`
+    document.querySelector("#r1").innerHTML = `Location: ${whetherdata.location.name}`
+    document.querySelector("#r2").innerHTML = `Local-Time: ${whetherdata.location.localtime}`
+  document.querySelector("#r3").innerHTML = `Current-Temp(C): ${whetherdata.current.temp_c}`
+  document.querySelector("#r4").innerHTML = `Feels like : ${whetherdata.current.condition.text}`
+  document.querySelector("#r5").innerHTML = `Cloud: ${whetherdata.current.cloud}`
+ document.querySelector("#r6").innerHTML = `Humidity: ${whetherdata.current.humidity}`
+  document.querySelector("#r7").innerHTML = `Wind: ${whetherdata.current.wind_mph}`
+  document.querySelector("#r8").innerHTML = `Precipitaion: ${whetherdata.current.precip_mm}`
 }
   
   )

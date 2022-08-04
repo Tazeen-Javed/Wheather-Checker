@@ -1,11 +1,26 @@
-body{background-color: darkblue; background-repeat: no-repeat;}
-h1{border: 1px solid; color:coral; background-color:darkmagenta; padding-left: 500px;}
-label{border: 1px solid; margin-left: 480px; font-size: 32px; color:coral;}
-input{width: 80%; margin-top: 20px; text-align: center; font-size: 28px; margin-left: 80px; border-top: none;
-border-left: none; border-right: none;}
+body{background-color: darkblue; background-repeat: no-repeat; background-image: url(./images/dark\ blue.jpeg);}
+h1{border: 1px solid; color:coral; background-color:darkmagenta;
+    margin-left: 390px;  position: absolute;  text-align: center; width: 500px;
+    white-space: nowrap;
+    animation: mymove 2s 1;
+}     
+        @keyframes mymove {
+          from {right: 0px;}
+          to {right: 490px;}
+        }
+/* form>label{border: 1px solid; margin-left: 480px; font-size: 32px; color:brown; font-weight: bolder; 
+    margin-top: 80px;} */
+input{width: 80%; margin-top: 80px; text-align: center; font-size: 28px; margin-left: 80px; border-top: none;
+border-left: none; border-right: none;border-color: darkblue;
+ border-bottom-color:black ; }
 button{font-size: 24px; background-color: darkorchid; color:burlywood;}
-#result{display: flex; flex-direction: column; border: 1px solid; width: 40%; text-align: center; 
-    height: 50%; margin-left: 350px; margin-top: 10px; color: black; font-weight: bolder;}
+#result{display: flex; flex-direction: column; border: 10px solid; width: 40%; text-align: center;
+    border: none; background-image: url(./images/same.jpg); background-size: cover;  
+    justify-content: space-evenly; flex-wrap: wrap;
+    margin-left: 350px; margin-top: 10px;  
+    }
+
+
     #r1{ color: crimson;font-size: 28px;}
     #r2{ color: crimson;font-size: 28px;}
     #r3{ color: crimson;font-size: 28px;}
@@ -14,3 +29,28 @@ button{font-size: 24px; background-color: darkorchid; color:burlywood;}
     #r6{ color: crimson;font-size: 28px;}
     #r7{ color: crimson;font-size: 28px;}
      #r8{ color: crimson; font-size: 28px;}
+
+
+
+     /* media query */
+     @media screen and (max-width: 769px)
+        {
+            input{width: 60%;}
+            h1{width: 50%; margin-left: -2px; margin-left: 150px;  animation: mymove 2s 1;}
+             @keyframes mymove {
+            from {right: 0px;}
+            to {right: 210px;}
+          }
+          #result{margin-left: -2px; margin-left: 180px;}
+ }
+
+ @media screen and (max-width: 376px){
+input{width: 50%; margin-left: -2px; margin-left: 50px; font-size: 20px;}
+h1{width: 50%;  font-size: 24px;  animation: mymove 2s 1;  margin-left: -2px; margin-left: 100px;}
+#result{margin-left: -2px; margin-left: 50px; width: 70%;}
+@keyframes mymove {
+from {right: 0px;}
+to {right: 90px;}
+}
+
+ }
